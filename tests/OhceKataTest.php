@@ -2,34 +2,38 @@
 
 declare(strict_types=1);
 
-namespace Deg540\PHPTestingBoilerplate\Test;
+namespace OscarJordanGil\OhceKata\Test;
 
-use Deg540\PHPTestingBoilerplate\Calculator;
+use OscarJordanGil\OhceKata\OhceKata;
 use PHPUnit\Framework\TestCase;
 
-final class CalculatorTest extends TestCase
+final class OhceKataTest extends TestCase
 {
     /**
      * @test
      */
     public function shouldAddTwoArguments()
     {
-        $calculator = new Calculator();
+        $Ohce = new OhceKata();
+        $word = "Stop!";
 
-        $result = $calculator->add(1, 2);
+        $result = $Ohce->execute($word);
 
-        $this->assertEquals(3, $result);
+        $this->assertEquals("Adios", $result);
     }
 
     /**
      * @test
      */
-    public function shouldMultiplyTwoArguments()
+    public function normalWordReturnsTurnOver()
     {
-        $calculator = new Calculator();
+        $Ohce = new OhceKata();
+        $word = "Juan";
 
-        $result = $calculator->multiply(1, 2);
+        $result = $Ohce->execute($word);
 
-        $this->assertEquals(2, $result);
+        $this->assertEquals("nuaJ", $result);
     }
+
+
 }
